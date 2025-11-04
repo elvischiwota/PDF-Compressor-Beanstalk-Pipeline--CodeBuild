@@ -12,12 +12,12 @@ Create a new GitHub repository (e.g., pdf-compress-beanstalk-pipeline) with the 
 ├─ Procfile
 └─ buildspec.yml
 ```
-##Procfile
+### Add a Procfile
 ```bash
 web: gunicorn app:app
 ```
 
-## buildspec.yml
+### Add a Buildspec.yml
 Let CodePipeline package files
 
 ```bash
@@ -43,18 +43,19 @@ artifacts:
 
 Commit and push to your GitHub repo/branch.
 ________________________________________
-## Elastic Beanstalk Setup (One-Time)
-1.	Go to AWS Console → Elastic Beanstalk → Create environment → Web server environment
-2.	Platform: Python
-3.	Application name: pdf-compress
-4.	Environment name: pdf-compress-env
-5.	Application code: “Sample application” (for first launch)
-6.	Roles:
-  o	Service role: aws-elasticbeanstalk-service-role
-  o	EC2 instance profile: aws-elasticbeanstalk-ec2-role
-✅ After creation, confirm that the environment is Green.
+## 2. Elastic Beanstalk Setup (One-Time)
+a. Go to **AWS Console** → **Elastic Beanstalk** → *Create environment* → *Web server environment*  
+b. Platform: **Python**  
+c. Application name: **pdf-compress**  
+d. Environment name: **pdf-compress-env**  
+e. Application code: “Sample application” (for first launch)  
+f. Roles:  
+   - Service role: `aws-elasticbeanstalk-service-role`  
+   - EC2 instance profile: `aws-elasticbeanstalk-ec2-role`  
+
+After creation, confirm that the environment is **Green**.
 ________________________________________
-🔧 A4. CodeBuild Project
+## 3. CodeBuild Project
 Setting	Value
 Source	No source
 Artifacts	CodePipeline
@@ -62,7 +63,7 @@ Environment	Managed image → Amazon Linux 2 → aws/codebuild/standard:7.0 → 
 Buildspec	Use the buildspec.yml file (CodeBuild will read it from the input artifact)
 Project Name	pdf-compress-build
 ________________________________________
-🔁 A5. CodePipeline Setup
+## 4. CodePipeline Setup
 1.	Console → CodePipeline → Create pipeline
 2.	Source: GitHub (via your connection) → select repo/branch
 
