@@ -1,3 +1,5 @@
+<img width="940" height="327" alt="image" src="https://github.com/user-attachments/assets/a79763f2-a7ed-4b46-8568-fb24b046108a" />
+
 ## Beanstalk via CodePipeline + CodeBuild
 This guide provides a streamlined, end-to-end setup for deploying a Python web app to AWS Elastic Beanstalk using CodePipeline and CodeBuild.
 ________________________________________
@@ -81,3 +83,6 @@ ________________________________________
 This pipeline fully automates building the Python app via CodeBuild
 - Packaging & deploying to Elastic Beanstalk <br>
 - Continuous delivery from GitHub → CodePipeline → CodeBuild → Beanstalk <br>
+
+
+
