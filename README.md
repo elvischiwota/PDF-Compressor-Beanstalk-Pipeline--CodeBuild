@@ -72,7 +72,7 @@ d.	**Deploy:** Elastic Beanstalk <br>
   - **Application name:** pdf-compress <br>
   - **Environment name:** pdf-compress-env <br>
 
-## 5.	Create pipeline
+## 5.	Create Pipeline
 Once complete, CodePipeline will automatically pull your source from GitHub <br>
 - Trigger CodeBuild <br>
 - Deploy the artifacts to Elastic Beanstalk <br>
