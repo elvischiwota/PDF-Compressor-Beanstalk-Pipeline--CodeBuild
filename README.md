@@ -64,17 +64,14 @@ Buildspec	Use the buildspec.yml file (CodeBuild will read it from the input arti
 Project Name	pdf-compress-build
 ________________________________________
 ## 4. CodePipeline Setup
-1.	Console → CodePipeline → Create pipeline
-2.	Source: GitHub (via your connection) → select repo/branch
+a.	Console → CodePipeline → Create pipeline
+b.	Source: GitHub (via your connection) → select repo/branch
+c.	Build: Select the pdf-compress-build CodeBuild project
+d.	Deploy: Elastic Beanstalk
+  o	Application name: pdf-compress
+  o	Environment name: pdf-compress-env
 
-3.	Build: Select the pdf-compress-build CodeBuild project
-
-4.	Deploy: Elastic Beanstalk
-o	Application name: pdf-compress
-
-o	Environment name: pdf-compress-env
-
-5.	Create pipeline
+## 5.	Create pipeline
 Once complete, CodePipeline will automatically: - Pull your source from GitHub
 - Trigger CodeBuild
 - Deploy the artifacts to Elastic Beanstalk
